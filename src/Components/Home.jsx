@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
 import {
   FaCss3Alt,
   FaFacebook,
@@ -10,8 +11,10 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import bannerProfile from "../assets/banerprofile.png";
-import aboutImage from "../assets/aboutImage.jpg";
+import bhpiImage from "../assets/images.jpeg";
 import contactImage from "../assets/Contact_Us_Sbq0zek.2e16d0ba.fill-1920x1080.jpg";
+import projectImage1 from "../assets/project1.jpg";
+import maijdeeImage from "../assets/maijdee.png";
 import { RiReactjsLine } from "react-icons/ri";
 import { TbBrandTailwind, TbBrandVite } from "react-icons/tb";
 import { FaBootstrap } from "react-icons/fa6";
@@ -21,6 +24,16 @@ import { IoLogoJavascript } from "react-icons/io";
 import { IoLogoFigma } from "react-icons/io5";
 
 const Home = () => {
+  const [active, setActive] = useState("home");
+
+  const handleActive = (section) => {
+    setActive(section);
+  };
+  const [text] = useTypewriter({
+    words: ["Web Developer", "Front-End Developer", "MERN Stack Developer"],
+    loop: 0,
+  });
+
   return (
     <>
       {/* Navbar section */}
@@ -53,22 +66,63 @@ const Home = () => {
                 className="menu menu-sm dropdown-content bg-gray-800 text-white rounded-box z-[1] mt-3 w-52 p-2 shadow-lg"
               >
                 <li>
-                  <a href="#home">HOME</a>
+                  <a
+                    href="#home"
+                    onClick={() => handleActive("home")}
+                    className={`hover:text-blue-400 ${
+                      active === "home" ? "border-b-2 border-indigo-800" : ""
+                    }`}
+                  >
+                    HOME
+                  </a>
                 </li>
                 <li>
-                  <a href="#about">ABOUT</a>
+                  <a
+                    href="#skills"
+                    onClick={() => handleActive("skills")}
+                    className={`hover:text-blue-400 ${
+                      active === "skills" ? "border-b-2 border-indigo-800" : ""
+                    }`}
+                  >
+                    SKILLS
+                  </a>
                 </li>
                 <li>
-                  <a href="#skills">SKILLS</a>
+                  <a
+                    href="#projects"
+                    onClick={() => handleActive("projects")}
+                    className={`hover:text-blue-400 ${
+                      active === "projects"
+                        ? "border-b-2 border-indigo-800"
+                        : ""
+                    }`}
+                  >
+                    PROJECTS
+                  </a>
                 </li>
                 <li>
-                  <a href="#projects">PROJECTS</a>
+                  <a
+                    href="#education"
+                    onClick={() => handleActive("education")}
+                    className={`hover:text-blue-400 ${
+                      active === "education"
+                        ? "border-b-2 border-indigo-800"
+                        : ""
+                    }`}
+                  >
+                    EDUCATION
+                  </a>
                 </li>
                 <li>
-                  <a href="#education">EDUCATION</a>
-                </li>
-                <li>
-                  <a href="#contact">CONTACT</a>
+                  <a
+                    href="#contact"
+                    onClick={() => handleActive("contact")}
+                    className={`hover:text-blue-400 ${
+                      active === "contact" ? "border-b-2 border-indigo-800" : ""
+                    }`}
+                  >
+                    CONTACT
+                  </a>
                 </li>
               </ul>
             </div>
@@ -77,32 +131,57 @@ const Home = () => {
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 space-x-6">
               <li>
-                <a href="#home" className="hover:text-blue-400">
+                <a
+                  href="#home"
+                  onClick={() => handleActive("home")}
+                  className={`hover:text-blue-400 ${
+                    active === "home" ? "border-b-2 border-indigo-800" : ""
+                  }`}
+                >
                   HOME
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-blue-400">
-                  ABOUT
-                </a>
-              </li>
-              <li>
-                <a href="#skills" className="hover:text-blue-400">
+                <a
+                  href="#skills"
+                  onClick={() => handleActive("skills")}
+                  className={`hover:text-blue-400 ${
+                    active === "skills" ? "border-b-2 border-indigo-800" : ""
+                  }`}
+                >
                   SKILLS
                 </a>
               </li>
               <li>
-                <a href="#projects" className="hover:text-blue-400">
+                <a
+                  href="#projects"
+                  onClick={() => handleActive("projects")}
+                  className={`hover:text-blue-400 ${
+                    active === "projects" ? "border-b-2 border-indigo-800" : ""
+                  }`}
+                >
                   PROJECTS
                 </a>
               </li>
               <li>
-                <a href="#education" className="hover:text-blue-400">
+                <a
+                  href="#education"
+                  onClick={() => handleActive("education")}
+                  className={`hover:text-blue-400 ${
+                    active === "education" ? "border-b-2 border-indigo-800" : ""
+                  }`}
+                >
                   EDUCATION
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-blue-400">
+                <a
+                  href="#contact"
+                  onClick={() => handleActive("contact")}
+                  className={`hover:text-blue-400 ${
+                    active === "contact" ? "border-b-2 border-indigo-800" : ""
+                  }`}
+                >
                   CONTACT
                 </a>
               </li>
@@ -110,11 +189,11 @@ const Home = () => {
           </div>
           <div className="navbar-end">
             <a
-              href="path-to-your-cv.pdf"
-              download
-              className="btn btn-primary rounded-full px-6"
+              href="https://github.com/MujahidulIslam4541"
+              target="_blank"
+              className=" transition-all duration-500  border border-[#854CE6] text-[#854CE6] hover:bg-[#854CE6] hover:text-white rounded-full px-6 py-2"
             >
-              Download CV
+             Github Profile
             </a>
           </div>
         </div>
@@ -123,25 +202,35 @@ const Home = () => {
       {/* Banner section */}
       <section
         id="home"
-        className=" font-Cinzel h-auto pb-10 md:pb-0 md:h-screen bg-gradient-to-r from-black via-gray-900 to-gray-950 text-white flex items-center justify-center px-4 pt-20"
+        className=" font-Cinzel h-auto pb-10 md:pb-0 md:h-screen bg-gradient-to-r from-black via-gray-900 to-gray-950 text-white flex justify-center px-4 pt-20"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 max-w-screen-xl mx-auto">
           {/* Left content */}
           <div className="flex flex-col justify-center space-y-6 pl-6 md:pl-12">
             <p className="text-lg text-blue-400">Hello!</p>
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-              I am a <span className="text-blue-400">Frontend Developer</span>
+            <h1 className="text-4xl md:text-5xl font-semibold">
+              I am Mujahidul Islam Rifat
+            </h1>
+            <h2 className="text-3xl font-bold leading-tight">
+              I am a {""}
+              <span className="text-blue-400">
+                {text}
+                <Cursor />
+              </span>
             </h2>
-            <p className="text-gray-400">
-              "I am eager to take on challenges and excel in creating
-              responsive, user-friendly designs."
+            <p className="text-gray-400 text-xl">
+              "I am a motivated and versatile individual, always eager to take
+              on new challenges. With a passion for learning I am dedicated to
+              delivering high-quality results. With a positive attitude and a
+              growth mindset, I am ready to make a meaningful contribution and
+              achieve great things."
             </p>
             <div className="text-3xl flex gap-6 mt-4">
               <a
                 href="https://github.com/MujahidulIslam4541"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-blue-400"
+                className="hover:text-[#854CE6]"
               >
                 <FaGithub />
               </a>
@@ -149,7 +238,7 @@ const Home = () => {
                 href="https://www.linkedin.com/in/mujahidul-islam-rifat-b9ab8729b/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-blue-400"
+                className="hover:text-[#854CE6]"
               >
                 <FaLinkedinIn />
               </a>
@@ -157,7 +246,7 @@ const Home = () => {
                 href="https://www.facebook.com/mujahidul.islam.rifat.223977"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-blue-400"
+                className="hover:text-[#854CE6]"
               >
                 <FaFacebook />
               </a>
@@ -165,13 +254,18 @@ const Home = () => {
                 href="https://x.com/Mujahidul_Rifat?t=rXbwh-6ymqOVdutZk2nD6w&s=09"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-blue-400"
+                className="hover:text-[#854CE6]"
               >
                 <FaTwitter />
               </a>
             </div>
-            <button className="btn btn-outline transition-all transform ease-in-out delay-300 hover:px-10 hover:btn-primary w-fit px-6 mt-4 ">
-              DOWNLOAD CV
+            <button className=" transition-all duration-500  border border-[#854CE6] text-[#854CE6] hover:bg-[#854CE6] hover:text-white rounded-md  py-2 w-fit px-6 mt-4 ">
+              <a
+                href="path-to-your-cv.pdf"
+                download
+              >
+                DOWNLOAD CV
+              </a>
             </button>
           </div>
 
@@ -186,53 +280,13 @@ const Home = () => {
         </div>
       </section>
 
-      {/* about section */}
-      <section
-        id="about"
-        className="font-Cinzel h-auto md:h-screen py-12 px-4 bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white"
-      >
-        <div className="grid grid-cols-1 lg:grid-cols-2  gap-8 max-w-screen-xl mx-auto">
-          {/* Left Section */}
-          <div className=" p-4 bg-gray-950 rounded-lg  flex justify-center items-center ">
-            <img
-              src={aboutImage}
-              alt="About me"
-              className="rounded-lg shadow-lg w-full h-96 md:h-[600px] hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-
-          {/* Right Section */}
-          <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-blue-400">ABOUT ME</h2>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white">
-              MUJAHIDUL ISLAM RIFAT
-            </h1>
-            <p className="text-lg text-gray-400 leading-relaxed">
-              I am a passionate learner, constantly motivated by the desire to
-              take on new challenges and grow in the world of programming. My
-              journey in tech started with a deep interest in solving complex
-              problems and creating impactful solutions. I am driven to push my
-              limits, expand my skill set, and continuously improve in the
-              ever-evolving field of technology. Learning programming allows me
-              to build the future, whether through front-end development or
-              tackling new challenges in different programming languages and
-              frameworks. Every project I take on is an opportunity to learn
-              something new and make a meaningful impact.
-            </p>
-            <button className="btn btn-outline transition-all transform ease-in-out delay-300 hover:btn-primary w-fit px-6 mt-4 hover:scale-105">
-              CONTACT ME
-            </button>
-          </div>
-        </div>
-      </section>
-
       {/* skills section */}
       <section
         id="skills"
         className="h-auto md:h-screen py-12 px-4 bg-gradient-to-r from-gray-900 to-gray-950 text-white"
       >
         <div className="max-w-screen-xl mx-auto text-center mb-12">
-          <p className="text-xl text-blue-400">Visit My Skills & Hire Me</p>
+          <p className="text-xl text-[#854CE6]">Visit My Skills & Hire Me</p>
           <h2 className="text-4xl font-bold text-white mt-4">My Skills</h2>
         </div>
 
@@ -334,17 +388,329 @@ const Home = () => {
       {/* projects section */}
       <section
         id="projects"
-        className="h-screen border-red-500 border-2"
-      ></section>
+        className="py-16 h-auto md:h-screen bg-gradient-to-r from-gray-900 to-gray-950 text-white"
+      >
+        <div className="text-center mb-12">
+          <p className="text-xl font-semibold text-red-400">
+            Explore My Projects & JUDGE
+          </p>
+          <h2 className="text-3xl font-bold">My Best Work</h2>
+        </div>
+
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+          {/* Project One */}
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-xl hover:shadow-gray-950 transition-all duration-500 p-4">
+            <img
+              src={projectImage1}
+              alt="CinemaSpot"
+              className="w-full h-48 object-cover rounded-lg"
+            />
+            <div className="p-4">
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  Next.js
+                </span>
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  Firebase
+                </span>
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  MongoDB
+                </span>
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  Tailwind CSS
+                </span>
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  JWT
+                </span>
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  Swiper
+                </span>
+              </div>
+              <h2 className="text-2xl font-bold mb-2">
+                Book Exchange Platform
+              </h2>
+              <p className="text-gray-400 text-sm mb-4">
+                June 2023 - August 2023
+              </p>
+              <p className="text-gray-300 text-sm mb-4">
+                This is a Book Exchange Platform between users, including
+                features for book selling, responsive design, and seamless
+                authentication.
+              </p>
+
+              <div className="flex justify-between">
+                <a
+                  href="https://github.com/programming-hero-web-course2/b10-a10-client-side-MujahidulIslam4541"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-colors"
+                >
+                  Client Side
+                </a>
+                <a
+                  href=" https://github.com/programming-hero-web-course2/b10-a10-server-side-MujahidulIslam4541"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-colors"
+                >
+                  Server Side
+                </a>
+                <a
+                  href="https://movie-portal-70714.web.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
+                >
+                  Live Link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Project Two */}
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-xl hover:shadow-gray-950 transition-all duration-300 p-4">
+            <img
+              src={projectImage1}
+              alt="CinemaSpot"
+              className="w-full h-48 object-cover rounded-lg"
+            />
+            <div className="p-4">
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  Next.js
+                </span>
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  Firebase
+                </span>
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  MongoDB
+                </span>
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  Tailwind CSS
+                </span>
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  JWT
+                </span>
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  Swiper
+                </span>
+              </div>
+              <h2 className="text-2xl font-bold mb-2">
+                Book Exchange Platform
+              </h2>
+              <p className="text-gray-400 text-sm mb-4">
+                June 2023 - August 2023
+              </p>
+              <p className="text-gray-300 text-sm mb-4">
+                This is a Book Exchange Platform between users, including
+                features for book selling, responsive design, and seamless
+                authentication.
+              </p>
+
+              <div className="flex justify-between">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-colors"
+                >
+                  Client Side
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-colors"
+                >
+                  Server Side
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
+                >
+                  Live Link
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Project Three */}
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-xl hover:shadow-gray-950 transition-all duration-300 p-4">
+            <img
+              src={projectImage1}
+              alt="CinemaSpot"
+              className="w-full h-48 object-cover rounded-lg"
+            />
+            <div className="p-4">
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  Next.js
+                </span>
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  Firebase
+                </span>
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  MongoDB
+                </span>
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  Tailwind CSS
+                </span>
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  JWT
+                </span>
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  Swiper
+                </span>
+              </div>
+              <h2 className="text-2xl font-bold mb-2">
+                Book Exchange Platform
+              </h2>
+              <p className="text-gray-400 text-sm mb-4">
+                June 2023 - August 2023
+              </p>
+              <p className="text-gray-300 text-sm mb-4">
+                This is a Book Exchange Platform between users, including
+                features for book selling, responsive design, and seamless
+                authentication.
+              </p>
+
+              <div className="flex justify-between">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-colors"
+                >
+                  Client Side
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-colors"
+                >
+                  Server Side
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
+                >
+                  Live Link
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* education section */}
       <section
         id="education"
-        className="h-screen border-red-500 border-2"
-      ></section>
+        className="py-16 bg-gradient-to-b from-gray-800 to-gray-900 text-white"
+      >
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4">Education</h2>
+          <p className="text-gray-400 text-lg">
+            My education has been a journey of self-discovery and growth. Here
+            are my educational details.
+          </p>
+        </div>
+
+        <div className="max-w-4xl mx-auto grid gap-8">
+          {/* Bhola Polytechnic Institute */}
+          <div className="border border-gray-700 rounded-xl p-6 bg-gray-950 hover:shadow-lg hover:shadow-indigo-950 transition-shadow">
+            <div className="flex gap-4 items-center mb-4">
+              <img
+                src={bhpiImage}
+                alt="Bhola Polytechnic Institute"
+                className="w-16 h-16 rounded-lg"
+              />
+              <div>
+                <h3 className="text-xl font-semibold">
+                  Bhola Polytechnic Institute
+                </h3>
+                <p className="text-gray-400">Borhanuddin, Bhola</p>
+                <p className="text-sm font-medium text-indigo-400">
+                  Computer Science & Technology
+                </p>
+                <span className="text-sm text-gray-500">2022 - Present</span>
+              </div>
+            </div>
+            <div>
+              <p className="mb-2">
+                <span className="font-semibold">Grade:</span> Pending CGPA
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                Currently pursuing a Diploma in Engineering in Computer Science
+                and Technology at Bhola Polytechnic Institute. I have
+                successfully completed 6 out of 8 semesters, gaining expertise
+                in courses such as Data Structures, Algorithms, Object-Oriented
+                Programming, Database Management Systems, Computer Networks,
+                Microcontroller Programming, and Sensor Technologies.
+                Additionally, I am proficient in tools like MS Word and Excel.
+              </p>
+              <p className="text-gray-300 mt-2">
+                As an active member of the{" "}
+                <span className="font-semibold text-indigo-400">
+                  Google Developer Student Club (Astra)
+                </span>
+                , I collaborate on innovative projects with a team of skilled
+                developers, enhancing my technical and teamwork skills.
+              </p>
+            </div>
+          </div>
+
+          {/* Maijdee Technical School and College */}
+          <div className="border border-gray-700 rounded-xl p-6 bg-gray-950 hover:shadow-lg hover:shadow-indigo-950 transition-shadow">
+            <div className="flex gap-4 items-center mb-4">
+              <img
+                src={maijdeeImage}
+                alt="Maijdee Technical School and College"
+                className="w-16 h-16 rounded-lg"
+              />
+              <div>
+                <h3 className="text-xl font-semibold">
+                  Maijdee Technical School and College
+                </h3>
+                <p className="text-gray-400">Maijdee, Noakhali</p>
+                <p className="text-sm font-medium text-indigo-400">
+                  AutoMobile Department
+                </p>
+                <span className="text-sm text-gray-500">2016 - 2020</span>
+              </div>
+            </div>
+            <div>
+              <p className="mb-2">
+                <span className="font-semibold">Grade:</span> GPA 4.29
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                I completed my Secondary School Certificate (SSC) in the Science
+                stream with a strong focus on Mathematics, Physics, and
+                Chemistry. My time at Maijdee Technical School and College
+                equipped me with foundational technical knowledge and
+                problem-solving skills that continue to shape my approach to
+                learning and development.
+              </p>
+              <p className="text-gray-300 mt-2">
+                During this time, I participated in various extracurricular
+                activities, including science fairs and computer programming
+                competitions, which sparked my interest in technology and
+                software development.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* contact us section */}
-      <section id="contact" className=" font-Cinzel h-screen p-10 bg-gradient-to-r from-gray-900 to-gray-950">
+      <section
+        id="contact"
+        className=" font-Cinzel h-auto md:h-screen p-10 bg-gradient-to-r from-gray-900 to-gray-950"
+      >
         <div className="text-center mb-8">
           <p className="text-gray-500">Contact</p>
           <h2 className="text-4xl font-bold text-white">CONTACT WITH ME</h2>
@@ -362,10 +728,14 @@ const Home = () => {
               Phone: <span className="text-gray-300">+00853744541</span>
             </h2>
             <h2 className="text-lg font-semibold text-gray-500">
-              E-mail: <span className="text-gray-300">mirifat4541@gmail.com</span>
+              E-mail:{" "}
+              <span className="text-gray-300">mirifat4541@gmail.com</span>
             </h2>
             <h2 className="text-lg font-semibold text-gray-500">
-              Location: <span className="text-gray-300">Noakhali, Chittagong, Bangladesh</span>
+              Location:{" "}
+              <span className="text-gray-300">
+                Noakhali, Chittagong, Bangladesh
+              </span>
             </h2>
           </div>
 
@@ -380,7 +750,7 @@ const Home = () => {
                   type="text"
                   id="name"
                   placeholder="Enter Your Name"
-                  className="w-full p-3 mt-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-3 mt-2 bg-transparent border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
@@ -392,7 +762,7 @@ const Home = () => {
                   type="email"
                   id="email"
                   placeholder="Enter Your E-mail"
-                  className="w-full p-3 mt-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-3 mt-2 bg-transparent border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
@@ -404,7 +774,7 @@ const Home = () => {
                   type="text"
                   id="subject"
                   placeholder="Enter Your Subject"
-                  className="w-full p-3 mt-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-3 bg-transparent mt-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
@@ -416,13 +786,13 @@ const Home = () => {
                   id="message"
                   rows="5"
                   placeholder="Enter Your Message"
-                  className="w-full p-3 mt-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-3 bg-transparent mt-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition duration-300"
+                className="w-full bg-gray-900 text-gray-200 p-3 rounded-lg border border-gray-700 hover:bg-gray-800 hover:text-white hover:shadow-md transition duration-300 ease-in-out"
               >
                 SEND MESSAGE
               </button>
