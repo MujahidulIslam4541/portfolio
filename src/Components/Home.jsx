@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import {
   FaCss3Alt,
@@ -12,9 +12,11 @@ import {
 } from "react-icons/fa";
 import bannerProfile from "../assets/banerprofile.png";
 import bhpiImage from "../assets/images.jpeg";
+import navImage from '../assets/icons8-web-development-64.png'
 import contactImage from "../assets/Contact_Us_Sbq0zek.2e16d0ba.fill-1920x1080.jpg";
 import projectImage1 from "../assets/project1.jpg";
 import maijdeeImage from "../assets/maijdee.png";
+import project2Image from '../assets/project2.jpg'
 import { RiReactjsLine } from "react-icons/ri";
 import { TbBrandTailwind, TbBrandVite } from "react-icons/tb";
 import { FaBootstrap } from "react-icons/fa6";
@@ -22,10 +24,12 @@ import { SiCanva, SiFirebase, SiMongodb, SiNodedotjs } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { IoLogoJavascript } from "react-icons/io";
 import { IoLogoFigma } from "react-icons/io5";
+import toast from "react-hot-toast";
 
 const Home = () => {
   const [active, setActive] = useState("home");
 
+  // usetypewriter
   const handleActive = (section) => {
     setActive(section);
   };
@@ -33,6 +37,31 @@ const Home = () => {
     words: ["Web Developer", "Front-End Developer", "MERN Stack Developer"],
     loop: 0,
   });
+
+  // send email 
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "e6023d9c-c3d0-4252-ac82-ce93e5d8e7f0");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    }).then((res) => res.json());
+
+    if (res.success) {
+      toast.success("Successfully created!");
+      event.target.reset();
+    }
+  };
 
   return (
     <>
@@ -126,7 +155,7 @@ const Home = () => {
                 </li>
               </ul>
             </div>
-            <a className="btn btn-ghost text-xl font-bold">daisyUI</a>
+            <div className="flex gap-2 items-center"><img src={navImage} className="px-4 w-20 h-12 rounded-full" alt="" /><span className="text-xl">Mujahidul Islam</span></div>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 space-x-6">
@@ -193,7 +222,7 @@ const Home = () => {
               target="_blank"
               className=" transition-all duration-500  border border-[#854CE6] text-[#854CE6] hover:bg-[#854CE6] hover:text-white rounded-full px-6 py-2"
             >
-             Github Profile
+              Github Profile
             </a>
           </div>
         </div>
@@ -261,8 +290,8 @@ const Home = () => {
             </div>
             <button className=" transition-all duration-500  border border-[#854CE6] text-[#854CE6] hover:bg-[#854CE6] hover:text-white rounded-md  py-2 w-fit px-6 mt-4 ">
               <a
-                href="path-to-your-cv.pdf"
-                download
+                href="https://docs.google.com/document/d/1IfOleytG-oHZ4b1SeZerBGdHRRXS67hNX-1dHCp1sDg/edit?usp=sharing"
+                target="_blank"
               >
                 DOWNLOAD CV
               </a>
@@ -427,20 +456,15 @@ const Home = () => {
                 </span>
               </div>
               <h2 className="text-2xl font-bold mb-2">
-                Book Exchange Platform
+                CinemaSpot
               </h2>
-              <p className="text-gray-400 text-sm mb-4">
-                June 2023 - August 2023
-              </p>
               <p className="text-gray-300 text-sm mb-4">
-                This is a Book Exchange Platform between users, including
-                features for book selling, responsive design, and seamless
-                authentication.
+              The CinemaSpot website includes dynamic movie details, adding/deleting movies, user authentication, favorites management, search functionality, responsive design, dark/light mode toggle, CRUD operations, and public/private routes.
               </p>
 
               <div className="flex justify-between">
                 <a
-                  href="https://github.com/programming-hero-web-course2/b10-a10-client-side-MujahidulIslam4541"
+                  href="https://github.com/MujahidulIslam4541/Movie-Portal-client"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-sm bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-colors"
@@ -448,7 +472,7 @@ const Home = () => {
                   Client Side
                 </a>
                 <a
-                  href=" https://github.com/programming-hero-web-course2/b10-a10-server-side-MujahidulIslam4541"
+                  href="https://github.com/MujahidulIslam4541/Movie-Portal-server"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-sm bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-colors"
@@ -470,7 +494,7 @@ const Home = () => {
           {/* Project Two */}
           <div className="bg-gray-800 rounded-lg overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-xl hover:shadow-gray-950 transition-all duration-300 p-4">
             <img
-              src={projectImage1}
+              src={project2Image}
               alt="CinemaSpot"
               className="w-full h-48 object-cover rounded-lg"
             />
@@ -496,20 +520,15 @@ const Home = () => {
                 </span>
               </div>
               <h2 className="text-2xl font-bold mb-2">
-                Book Exchange Platform
+                Easy Meals
               </h2>
-              <p className="text-gray-400 text-sm mb-4">
-                June 2023 - August 2023
-              </p>
               <p className="text-gray-300 text-sm mb-4">
-                This is a Book Exchange Platform between users, including
-                features for book selling, responsive design, and seamless
-                authentication.
+              The  Easy Meals website features user authentication, food listing, sharing options, responsive design, search functionality, real-time updates, intuitive UI, community engagement, and promotes reducing food waste through collaboration.
               </p>
 
               <div className="flex justify-between">
                 <a
-                  href="#"
+                  href="https://github.com/MujahidulIslam4541/Food-sharing-client"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-sm bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-colors"
@@ -517,7 +536,7 @@ const Home = () => {
                   Client Side
                 </a>
                 <a
-                  href="#"
+                  href="https://github.com/MujahidulIslam4541/Food-sharing-server"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-sm bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-colors"
@@ -525,7 +544,7 @@ const Home = () => {
                   Server Side
                 </a>
                 <a
-                  href="#"
+                  href="https://food-sharing-55247.web.app"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-sm bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
@@ -622,7 +641,7 @@ const Home = () => {
 
         <div className="max-w-4xl mx-auto grid gap-8">
           {/* Bhola Polytechnic Institute */}
-          <div className="border border-gray-700 rounded-xl p-6 bg-gray-950 hover:shadow-lg hover:shadow-indigo-950 transition-shadow">
+          <div className="border border-gray-700 rounded-xl p-6 bg-gray-950 hover:shadow-lg hover:shadow-indigo-950 hover:-translate-y-1 transition-all duration-300">
             <div className="flex gap-4 items-center mb-4">
               <img
                 src={bhpiImage}
@@ -665,7 +684,7 @@ const Home = () => {
           </div>
 
           {/* Maijdee Technical School and College */}
-          <div className="border border-gray-700 rounded-xl p-6 bg-gray-950 hover:shadow-lg hover:shadow-indigo-950 transition-shadow">
+          <div className="border border-gray-700 rounded-xl p-6 bg-gray-950 hover:shadow-lg hover:shadow-indigo-950 transition-all hover:-translate-y-1 duration-300">
             <div className="flex gap-4 items-center mb-4">
               <img
                 src={maijdeeImage}
@@ -741,14 +760,14 @@ const Home = () => {
 
           {/* Right Section */}
           <div className="lg:col-span-2 flex flex-col p-6 bg-gray-950 shadow-lg rounded-lg">
-            <form className="space-y-3">
+            <form onSubmit={onSubmit} className="space-y-3">
               <div>
                 <label htmlFor="name" className="block text-gray-700">
                   NAME
                 </label>
                 <input
                   type="text"
-                  id="name"
+                  name="name"
                   placeholder="Enter Your Name"
                   className="w-full p-3 mt-2 bg-transparent border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
@@ -760,7 +779,7 @@ const Home = () => {
                 </label>
                 <input
                   type="email"
-                  id="email"
+                  name="email"
                   placeholder="Enter Your E-mail"
                   className="w-full p-3 mt-2 bg-transparent border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
@@ -772,7 +791,7 @@ const Home = () => {
                 </label>
                 <input
                   type="text"
-                  id="subject"
+                  name="subject"
                   placeholder="Enter Your Subject"
                   className="w-full p-3 bg-transparent mt-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
@@ -783,7 +802,7 @@ const Home = () => {
                   YOUR MESSAGE
                 </label>
                 <textarea
-                  id="message"
+                  name="message"
                   rows="5"
                   placeholder="Enter Your Message"
                   className="w-full p-3 bg-transparent mt-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
