@@ -35,7 +35,7 @@ const Home = () => {
     setActive(section);
   };
   const [text] = useTypewriter({
-    words: ["Web Developer", "Front-End Developer", "MERN Stack Developer"],
+    words: ["Web Developer", "Front-End Developer", "MERN Stack Developer","Programmer"],
     loop: 0,
   });
 
@@ -68,7 +68,7 @@ const Home = () => {
     <>
       {/* Navbar section */}
       <section className="">
-        <div className="navbar font-Cinzel max-w-screen-xl  mx-auto fixed z-50 bg-gradient-to-r from-black to-gray-950 shadow-lg backdrop-blur-md text-white px-4">
+        <div className="navbar font-Cinzel max-w-screen-xl  mx-auto fixed z-50 bg-gradient-to-r from-gray-900 to-gray-950 shadow-lg backdrop-blur-md text-white px-4">
           <div className="navbar-start">
             <div className="flex gap-2 items-center">
               <img
@@ -700,7 +700,7 @@ const Home = () => {
               <p className="text-gray-300 mt-2">
                 As an active member of the{" "}
                 <span className="font-semibold text-indigo-400">
-                  Google Developer Student Club (Astra)
+                  Terget Programmer Bhola Polytechnic Institute
                 </span>
                 , I collaborate on innovative projects with a team of skilled
                 developers, enhancing my technical and teamwork skills.
@@ -732,12 +732,7 @@ const Home = () => {
                 <span className="font-semibold">Grade:</span> GPA 4.29
               </p>
               <p className="text-gray-300 leading-relaxed">
-                I completed my Secondary School Certificate (SSC) in the Science
-                stream with a strong focus on Mathematics, Physics, and
-                Chemistry. My time at Maijdee Technical School and College
-                equipped me with foundational technical knowledge and
-                problem-solving skills that continue to shape my approach to
-                learning and development.
+              I Completed SSC in the Automobiles department, followed by three Month of specialized study and practical experience in the automotive field. Gained valuable hands-on skills in vehicle systems, maintenance, and troubleshooting, providing a solid foundation for a successful career in the automotive industry.
               </p>
               <p className="text-gray-300 mt-2">
                 During this time, I participated in various extracurricular
