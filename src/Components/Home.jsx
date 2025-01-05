@@ -761,10 +761,10 @@ const Home = () => {
             <img
               src={contactImage}
               alt="Contact"
-              className="w-full h-44 mb-4 object-cover rounded-lg" // Removed rounded-full to make the image rectangular
+              className="w-full h-44 mb-4 object-cover rounded-lg" 
             />
             <h2 className="text-lg font-semibold text-gray-500">
-              Phone: <span className="text-gray-300">+00853744541</span>
+              Phone: <span className="text-gray-300">+0053744541</span>
             </h2>
             <h2 className="text-lg font-semibold text-gray-500">
               E-mail:{" "}
