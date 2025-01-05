@@ -12,11 +12,12 @@ import {
 } from "react-icons/fa";
 import bannerProfile from "../assets/banerprofile.png";
 import bhpiImage from "../assets/images.jpeg";
-import navImage from '../assets/icons8-web-development-64.png'
+import navImage from "../assets/icons8-web-development-64.png";
 import contactImage from "../assets/Contact_Us_Sbq0zek.2e16d0ba.fill-1920x1080.jpg";
 import projectImage1 from "../assets/project1.jpg";
 import maijdeeImage from "../assets/maijdee.png";
-import project2Image from '../assets/project2.jpg'
+import project3Image from "../assets/projrct3.jpg";
+import project2Image from "../assets/project2.jpg";
 import { RiReactjsLine } from "react-icons/ri";
 import { TbBrandTailwind, TbBrandVite } from "react-icons/tb";
 import { FaBootstrap } from "react-icons/fa6";
@@ -38,7 +39,7 @@ const Home = () => {
     loop: 0,
   });
 
-  // send email 
+  // send email
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -66,96 +67,17 @@ const Home = () => {
   return (
     <>
       {/* Navbar section */}
-      <section className="h-[68px]">
+      <section className="">
         <div className="navbar font-Cinzel max-w-screen-xl  mx-auto fixed z-50 bg-gradient-to-r from-black to-gray-950 shadow-lg backdrop-blur-md text-white px-4">
           <div className="navbar-start">
-            <div className="dropdown">
-              <div
-                tabIndex={0}
-                role="button"
-                className="btn btn-ghost lg:hidden"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h8m-8 6h16"
-                  />
-                </svg>
-              </div>
-              <ul
-                tabIndex={0}
-                className="menu menu-sm dropdown-content bg-gray-800 text-white rounded-box z-[1] mt-3 w-52 p-2 shadow-lg"
-              >
-                <li>
-                  <a
-                    href="#home"
-                    onClick={() => handleActive("home")}
-                    className={`hover:text-blue-400 ${
-                      active === "home" ? "border-b-2 border-indigo-800" : ""
-                    }`}
-                  >
-                    HOME
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#skills"
-                    onClick={() => handleActive("skills")}
-                    className={`hover:text-blue-400 ${
-                      active === "skills" ? "border-b-2 border-indigo-800" : ""
-                    }`}
-                  >
-                    SKILLS
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#projects"
-                    onClick={() => handleActive("projects")}
-                    className={`hover:text-blue-400 ${
-                      active === "projects"
-                        ? "border-b-2 border-indigo-800"
-                        : ""
-                    }`}
-                  >
-                    PROJECTS
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#education"
-                    onClick={() => handleActive("education")}
-                    className={`hover:text-blue-400 ${
-                      active === "education"
-                        ? "border-b-2 border-indigo-800"
-                        : ""
-                    }`}
-                  >
-                    EDUCATION
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#contact"
-                    onClick={() => handleActive("contact")}
-                    className={`hover:text-blue-400 ${
-                      active === "contact" ? "border-b-2 border-indigo-800" : ""
-                    }`}
-                  >
-                    CONTACT
-                  </a>
-                </li>
-              </ul>
+            <div className="flex gap-2 items-center">
+              <img
+                src={navImage}
+                className="px-4 w-20 h-12 rounded-full"
+                alt=""
+              />
+              <span className="text-xl">Mujahidul Islam</span>
             </div>
-            <div className="flex gap-2 items-center"><img src={navImage} className="px-4 w-20 h-12 rounded-full" alt="" /><span className="text-xl">Mujahidul Islam</span></div>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 space-x-6">
@@ -220,10 +142,104 @@ const Home = () => {
             <a
               href="https://github.com/MujahidulIslam4541"
               target="_blank"
-              className=" transition-all duration-500  border border-[#854CE6] text-[#854CE6] hover:bg-[#854CE6] hover:text-white rounded-full px-6 py-2"
+              className=" hidden lg:flex transition-all duration-500  border border-[#854CE6] text-[#854CE6] hover:bg-[#854CE6] hover:text-white rounded-full px-6 py-2"
             >
               Github Profile
             </a>
+
+            <div className="dropdown">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost lg:hidden"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content bg-gray-800 text-white rounded-box z-[1] mt-3 w-52 p-2 shadow-lg -translate-x-40"
+              >
+                <li>
+                  <a
+                    href="#home"
+                    onClick={() => handleActive("home")}
+                    className={`hover:text-blue-400 ${
+                      active === "home" ? "border-b-2 border-indigo-800" : ""
+                    }`}
+                  >
+                    HOME
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#skills"
+                    onClick={() => handleActive("skills")}
+                    className={`hover:text-blue-400 ${
+                      active === "skills" ? "border-b-2 border-indigo-800" : ""
+                    }`}
+                  >
+                    SKILLS
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#projects"
+                    onClick={() => handleActive("projects")}
+                    className={`hover:text-blue-400 ${
+                      active === "projects"
+                        ? "border-b-2 border-indigo-800"
+                        : ""
+                    }`}
+                  >
+                    PROJECTS
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#education"
+                    onClick={() => handleActive("education")}
+                    className={`hover:text-blue-400 ${
+                      active === "education"
+                        ? "border-b-2 border-indigo-800"
+                        : ""
+                    }`}
+                  >
+                    EDUCATION
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    onClick={() => handleActive("contact")}
+                    className={`hover:text-blue-400 ${
+                      active === "contact" ? "border-b-2 border-indigo-800" : ""
+                    }`}
+                  >
+                    CONTACT
+                  </a>
+                </li>
+                <a
+                  href="https://github.com/MujahidulIslam4541"
+                  target="_blank"
+                  className="mt-5 transition-all duration-500  border border-[#854CE6] text-[#854CE6] hover:bg-[#854CE6] hover:text-white rounded-full px-6 py-2"
+                >
+                  Github Profile
+                </a>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -231,11 +247,11 @@ const Home = () => {
       {/* Banner section */}
       <section
         id="home"
-        className=" font-Cinzel h-auto pb-10 md:pb-0 md:h-screen bg-gradient-to-r from-black via-gray-900 to-gray-950 text-white flex justify-center px-4 pt-20"
+        className=" font-Cinzel py-16 lg:py-32 bg-gradient-to-r from-black via-gray-900 to-gray-950 text-white flex justify-center px-4 pt-20"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 max-w-screen-xl mx-auto">
           {/* Left content */}
-          <div className="flex flex-col justify-center space-y-6 pl-6 md:pl-12">
+          <div className="flex flex-col justify-center space-y-6 pl-6 mt-10 md:0 md:pl-12">
             <p className="text-lg text-blue-400">Hello!</p>
             <h1 className="text-4xl md:text-5xl font-semibold">
               I am Mujahidul Islam Rifat
@@ -303,7 +319,7 @@ const Home = () => {
             <img
               src={bannerProfile}
               alt="Profile"
-              className="rounded-full w-80 md:w-96 shadow-lg hover:scale-105 transform transition duration-300 ease-in-out"
+              className="mt-5 md:mt-0 rounded-full w-80 md:w-96 shadow-lg hover:scale-105 transform transition duration-300 ease-in-out"
             />
           </div>
         </div>
@@ -312,7 +328,7 @@ const Home = () => {
       {/* skills section */}
       <section
         id="skills"
-        className="h-auto md:h-screen py-12 px-4 bg-gradient-to-r from-gray-900 to-gray-950 text-white"
+        className="py-16 px-4 bg-gradient-to-r from-gray-900 to-gray-950 text-white"
       >
         <div className="max-w-screen-xl mx-auto text-center mb-12">
           <p className="text-xl text-[#854CE6]">Visit My Skills & Hire Me</p>
@@ -417,7 +433,7 @@ const Home = () => {
       {/* projects section */}
       <section
         id="projects"
-        className="py-16 h-auto md:h-screen bg-gradient-to-r from-gray-900 to-gray-950 text-white"
+        className="py-16  bg-gradient-to-r from-gray-900 to-gray-950 text-white"
       >
         <div className="text-center mb-12">
           <p className="text-xl font-semibold text-red-400">
@@ -437,13 +453,19 @@ const Home = () => {
             <div className="p-4">
               <div className="flex flex-wrap gap-2 mb-4">
                 <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
-                  Next.js
+                  React.js
                 </span>
                 <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
-                  Firebase
+                  Node.js
+                </span>
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  Express.js
                 </span>
                 <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
                   MongoDB
+                </span>
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  Firebase
                 </span>
                 <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
                   Tailwind CSS
@@ -455,11 +477,12 @@ const Home = () => {
                   Swiper
                 </span>
               </div>
-              <h2 className="text-2xl font-bold mb-2">
-                CinemaSpot
-              </h2>
+              <h2 className="text-2xl font-bold mb-2">CinemaSpot</h2>
               <p className="text-gray-300 text-sm mb-4">
-              The CinemaSpot website includes dynamic movie details, adding/deleting movies, user authentication, favorites management, search functionality, responsive design, dark/light mode toggle, CRUD operations, and public/private routes.
+                The CinemaSpot website includes dynamic movie details,
+                adding/deleting movies, user authentication, favorites
+                management, search functionality, responsive design, dark/light
+                mode toggle, CRUD operations, and public/private routes.
               </p>
 
               <div className="flex justify-between">
@@ -501,14 +524,21 @@ const Home = () => {
             <div className="p-4">
               <div className="flex flex-wrap gap-2 mb-4">
                 <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
-                  Next.js
+                  React.js
                 </span>
                 <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
-                  Firebase
+                  Node.js
+                </span>
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  Express.js
                 </span>
                 <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
                   MongoDB
                 </span>
+                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
+                  Firebase
+                </span>
+
                 <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
                   Tailwind CSS
                 </span>
@@ -519,11 +549,13 @@ const Home = () => {
                   Swiper
                 </span>
               </div>
-              <h2 className="text-2xl font-bold mb-2">
-                Easy Meals
-              </h2>
+              <h2 className="text-2xl font-bold mb-2">Easy Meals</h2>
               <p className="text-gray-300 text-sm mb-4">
-              The  Easy Meals website features user authentication, food listing, sharing options, responsive design, search functionality, real-time updates, intuitive UI, community engagement, and promotes reducing food waste through collaboration.
+                The Easy Meals website features user authentication, food
+                listing, sharing options, responsive design, search
+                functionality, real-time updates, intuitive UI, community
+                engagement, and promotes reducing food waste through
+                collaboration.
               </p>
 
               <div className="flex justify-between">
@@ -558,20 +590,17 @@ const Home = () => {
           {/* Project Three */}
           <div className="bg-gray-800 rounded-lg overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-xl hover:shadow-gray-950 transition-all duration-300 p-4">
             <img
-              src={projectImage1}
+              src={project3Image}
               alt="CinemaSpot"
               className="w-full h-48 object-cover rounded-lg"
             />
             <div className="p-4">
               <div className="flex flex-wrap gap-2 mb-4">
                 <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
-                  Next.js
+                  React.js
                 </span>
                 <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
                   Firebase
-                </span>
-                <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
-                  MongoDB
                 </span>
                 <span className="px-3 py-1 bg-gray-700 text-xs text-white rounded">
                   Tailwind CSS
@@ -583,21 +612,17 @@ const Home = () => {
                   Swiper
                 </span>
               </div>
-              <h2 className="text-2xl font-bold mb-2">
-                Book Exchange Platform
-              </h2>
-              <p className="text-gray-400 text-sm mb-4">
-                June 2023 - August 2023
-              </p>
+              <h2 className="text-2xl font-bold mb-2">Eco Adventures</h2>
               <p className="text-gray-300 text-sm mb-4">
-                This is a Book Exchange Platform between users, including
-                features for book selling, responsive design, and seamless
-                authentication.
+                Eco Adventures is an immersive website showcasing thrilling
+                eco-tourism experiences. It highlights sustainable travel,
+                adventure activities, and breathtaking destinations, inspiring
+                nature lovers to explore and protect our planet responsibly.
               </p>
 
               <div className="flex justify-between">
                 <a
-                  href="#"
+                  href="https://github.com/MujahidulIslam4541/Eco-Adventures-project"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-sm bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-colors"
@@ -605,7 +630,7 @@ const Home = () => {
                   Client Side
                 </a>
                 <a
-                  href="#"
+                  href="https://github.com/MujahidulIslam4541/Eco-Adventures-project"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-sm bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-colors"
@@ -613,7 +638,7 @@ const Home = () => {
                   Server Side
                 </a>
                 <a
-                  href="#"
+                  href="https://eco-adventures-e0047.web.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-sm bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
@@ -629,7 +654,7 @@ const Home = () => {
       {/* education section */}
       <section
         id="education"
-        className="py-16 bg-gradient-to-b from-gray-800 to-gray-900 text-white"
+        className="py-16  bg-gradient-to-b from-gray-800 to-gray-900 text-white"
       >
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Education</h2>
@@ -728,7 +753,7 @@ const Home = () => {
       {/* contact us section */}
       <section
         id="contact"
-        className=" font-Cinzel h-auto md:h-screen p-10 bg-gradient-to-r from-gray-900 to-gray-950"
+        className=" font-Cinzel h-auto lg:h-screen p-10 bg-gradient-to-r from-gray-900 to-gray-950"
       >
         <div className="text-center mb-8">
           <p className="text-gray-500">Contact</p>
