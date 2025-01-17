@@ -30,12 +30,12 @@ import toast from "react-hot-toast";
 const Home = () => {
   const [active, setActive] = useState("home");
 
-  // usetypewriter
+  // useTypewriter 
   const handleActive = (section) => {
     setActive(section);
   };
   const [text] = useTypewriter({
-    words: ["Web Developer", "Front-End Developer", "MERN Stack Developer","Programmer"],
+    words: ["Web Developer", "Front-End Developer"],
     loop: 0,
   });
 
@@ -67,9 +67,9 @@ const Home = () => {
   return (
     <>
       {/* Navbar section */}
-      <section className="">
-        <div className="navbar font-Cinzel max-w-screen-xl  mx-auto fixed z-50 bg-gradient-to-r from-gray-900 to-gray-950 shadow-lg backdrop-blur-md text-white px-4">
-          <div className="navbar-start">
+      <section className="bg-gradient-to-r from-gray-900 to-gray-950">
+        <div className="navbar font-Cinzel fixed z-50  shadow-lg backdrop-blur-md text-white px-8">
+          <div className="navbar-start ">
             <div className="flex gap-2 items-center">
               <img
                 src={navImage}
@@ -306,7 +306,7 @@ const Home = () => {
             </div>
             <button className=" transition-all duration-500  border border-[#854CE6] text-[#854CE6] hover:bg-[#854CE6] hover:text-white rounded-md  py-2 w-fit px-6 mt-4 ">
               <a
-                href="https://docs.google.com/document/d/1IfOleytG-oHZ4b1SeZerBGdHRRXS67hNX-1dHCp1sDg/edit?usp=sharing"
+                href="https://drive.google.com/file/d/1vPybtsBGvVqmxxHb8hkIChTu6fJ-s-wU/view"
                 target="_blank"
               >
                 DOWNLOAD CV
@@ -330,13 +330,13 @@ const Home = () => {
         id="skills"
         className="py-16 px-4 bg-gradient-to-r from-gray-900 to-gray-950 text-white"
       >
-        <div className="max-w-screen-xl mx-auto text-center mb-12">
+        <div className=" text-center mb-12">
           <p className="text-xl text-[#854CE6]">Visit My Skills & Hire Me</p>
           <h2 className="text-4xl font-bold text-white mt-4">My Skills</h2>
         </div>
 
         {/* Skills Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-xl mx-auto">
           {/* Frontend Skills */}
           <div className="bg-gray-950 p-6 rounded-lg shadow-lg transition-all duration-300">
             <h3 className="text-2xl font-semibold text-blue-400 mb-6 text-center">
@@ -442,7 +442,7 @@ const Home = () => {
           <h2 className="text-3xl font-bold">My Best Work</h2>
         </div>
 
-        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-screen-xl mx-auto">
           {/* Project One */}
           <div className="bg-gray-800 rounded-lg overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-xl hover:shadow-gray-950 transition-all duration-500 p-4">
             <img
@@ -654,7 +654,7 @@ const Home = () => {
       {/* education section */}
       <section
         id="education"
-        className="py-16  bg-gradient-to-b from-gray-800 to-gray-900 text-white"
+        className="py-16  bg-gradient-to-b from-gray-900 to-gray-900 text-white"
       >
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Education</h2>
@@ -700,7 +700,7 @@ const Home = () => {
               <p className="text-gray-300 mt-2">
                 As an active member of the{" "}
                 <span className="font-semibold text-indigo-400">
-                  Terget Programmer Bhola Polytechnic Institute
+                  Target Programmer Bhola Polytechnic Institute
                 </span>
                 , I collaborate on innovative projects with a team of skilled
                 developers, enhancing my technical and teamwork skills.
@@ -724,7 +724,7 @@ const Home = () => {
                 <p className="text-sm font-medium text-indigo-400">
                   AutoMobile Department
                 </p>
-                <span className="text-sm text-gray-500">2016 - 2020</span>
+                <span className="text-sm text-gray-500">2018 - 2021</span>
               </div>
             </div>
             <div>
@@ -755,7 +755,7 @@ const Home = () => {
           <h2 className="text-4xl font-bold text-white">CONTACT WITH ME</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-xl mx-auto">
           {/* Left Side */}
           <div className="flex flex-col space-y-4  p-6 bg-gray-950 shadow-lg rounded-lg">
             <img
@@ -764,7 +764,7 @@ const Home = () => {
               className="w-full h-44 mb-4 object-cover rounded-lg" 
             />
             <h2 className="text-lg font-semibold text-gray-500">
-              Phone: <span className="text-gray-300">+0053744541</span>
+              Phone: <span className="text-gray-300">+8801853744541</span>
             </h2>
             <h2 className="text-lg font-semibold text-gray-500">
               E-mail:{" "}
