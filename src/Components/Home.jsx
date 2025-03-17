@@ -306,7 +306,7 @@ const Home = () => {
             </div>
             <button className=" transition-all duration-500  border border-[#854CE6] text-[#854CE6] hover:bg-[#854CE6] hover:text-white rounded-md  py-2 w-fit px-6 mt-4 ">
               <a
-                href="https://drive.google.com/file/d/1vPybtsBGvVqmxxHb8hkIChTu6fJ-s-wU/view"
+                href="https://drive.google.com/file/d/1cLmMv7ZBISIWWweX_WiXyfMcmQNnC2wY/view?usp=sharing"
                 target="_blank"
               >
                 DOWNLOAD CV
